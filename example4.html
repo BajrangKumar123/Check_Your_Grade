@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Example</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1><u>Switch Case Example</u></h1><br>
+    <br>
+    <div class="exa1">
+        <label for="marks"><strong>Enter Your Marks Here :</strong></label><br><br>
+        <input type="number" min="0" max="100" id="mrks" required><br><br>
+        <div class="exa2">
+            <h3 id="result"></h3>
+        </div><br><br>
+        <button type="button" id="btn2" onclick="checkGrade()"><b>Your Number</b></button>
+    </div>
+
+</body>
+<script>
+    function checkGrade() {
+        var mark = Number(document.getElementById("mrks").value);
+        var grade;
+        switch (true) {
+            case (mark >= 90 && mark <= 100):
+                grade = "A";
+                break;
+            case (mark >= 80 && mark <= 90):
+                grade = "B";
+                break;
+            case (mark >= 70 && mark <= 80):
+                grade = "C";
+                break;
+            case (mark >= 60 && mark <= 70):
+                grade = "D";
+                break;
+            case (mark >= 0 && mark <= 60):
+                grade = "Failed!!";
+                break;
+            default:
+                grade = "Input Invalid!";
+        }
+        document.getElementById("result").innerHTML = "Your Grade is:" + grade;
+    }
+
+
+</script>
+
+</html>
